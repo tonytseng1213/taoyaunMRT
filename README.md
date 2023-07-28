@@ -56,15 +56,15 @@ pip install pandas requests gspread io json google.oauth2.service_account os pyY
 
 *table_name: "your_table"
 
-*column_names(value自訂，可增減，與type數量要相等):
+*column_names(value自訂，可增減，與type數量要相等):  
   column1: "營運日"  
   column2: "星期"  
   column3: "總運量"  
 
-*column_types(value自訂，可增減，與name數量要相等):
-  column1: "DATETIME"
-  column2: "VARCHAR(10)"
-  column3: "INT"
+*column_types(value自訂，可增減，與name數量要相等):  
+  column1: "DATETIME"  
+  column2: "VARCHAR(10)"  
+  column3: "INT"  
 
 
 6.**執行程式**  
