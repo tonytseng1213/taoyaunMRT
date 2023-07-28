@@ -9,7 +9,7 @@ MRT-side-project
 **python**  **version**3.11
 
 1.**安裝相依套件**：  
-pip install pandas requests gspread io json google.oauth2.service_account os
+pip install pandas requests gspread io json google.oauth2.service_account os pyYAML argparse mysql-connector-python
 
 2.**從政府開放資料平台獲得資料**  
 
@@ -25,11 +25,13 @@ pip install pandas requests gspread io json google.oauth2.service_account os
 
 可以輸入main.py -h查看下列訊息:  
 
-**-a** : Amount of data,default=10, type= int  
+**-a** : Amount of data, default=inf(全部), type= int  
 
-**-o** : default="csv" ,Output type (googlesheet or csv)
+**-o** : default="csv" ,Output type (googlesheet , mysql or csv)  
 
-5.**必要輸入**  
+**-c** : "Path to the config.yaml file
+
+5.**必要輸入**(可以寫在yaml檔)  
 
 *Path to the JSON file  
 
@@ -44,6 +46,26 @@ pip install pandas requests gspread io json google.oauth2.service_account os
 **csv**: 
 
 *file name : 要儲存的檔案名稱
+
+**mysql**(必須輸入.yaml):  
+
+*mysql_user: "myuser"  
+*mysql_password: "mypassword"  
+*mysql_host: "localhost"  
+*mysql_database: "mydatabase"
+
+*table_name: "your_table"
+
+*column_names(value自訂，可增減，與type數量要相等):
+  column1: "營運日"  
+  column2: "星期"  
+  column3: "總運量"  
+
+*column_types(value自訂，可增減，與name數量要相等):
+  column1: "DATETIME"
+  column2: "VARCHAR(10)"
+  column3: "INT"
+
 
 6.**執行程式**  
 
